@@ -1,5 +1,27 @@
+import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
+
 const GsapStagger = () => {
   // TODO: Implement the gsap.stagger() method
+
+  useGSAP(()=>{
+    gsap.to('.stagger-box',{
+      y: 250,
+      rotation:360,
+      borderRadius: "100%",
+      yoyo: true,
+      repeat: -1,
+      // stagger: 2
+      stagger: {
+        amount: 1.5,
+        grid: [3,1], // ? 
+        axis: 'y',
+        ease: 'cir.inOut',
+        from: "center"
+      
+      }
+    })
+  },[])
 
   return (
     <main>
@@ -17,7 +39,6 @@ const GsapStagger = () => {
         create dynamic and visually appealing effects, such as staggered fades,
         rotations, movements, and more.
       </p>
-
       <p className="mt-5 text-gray-500">
         Read more about the{" "}
         <a
