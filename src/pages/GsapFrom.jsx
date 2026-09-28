@@ -1,5 +1,18 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 const GsapFrom = () => {
   // TODO: Implement the gsap.from() method
+
+  useGSAP(()=>{
+    gsap.from('#green-box',{
+      x:250,
+      ease: 'power1.inOut',
+      repeat: true,
+      duration: 3,
+      rotate: 180
+    })
+  }, [])
 
   return (
     <main>
